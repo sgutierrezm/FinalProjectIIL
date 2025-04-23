@@ -1,0 +1,354 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+main{
+    padding: 0%;
+}
+:root {
+--cafe: #6f4e37;
+--negro: #1c1c1c;
+--blanco: #ffffff;
+--naranja-oscuro: #c85c2f;
+--naranja-hover: #cf711f;
+--gris-suave: #f4f4f4;
+--gris-texto: #555555;
+--gris-oscuro: #2e2e2e;
+--gris-footer: #111;
+--gris-claro: #bbb;
+--negro-absoluto: #000;
+--sombra: rgba(0, 0, 0, 0.1);
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+}
+
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: var(--negro);
+color: var(--blanco);
+line-height: 1.6;
+}
+
+header {
+background-color: var(--negro-absoluto);
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem 2rem;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 999;
+}
+
+.logo {
+display: flex;
+align-items: center;
+font-size: 1.5rem;
+font-weight: bold;
+color: var(--blanco);
+}
+
+.logo img {
+width: 45px;
+margin-right: 0.5rem;
+}
+
+nav a {
+color: var(--blanco);
+margin-left: 1.5rem;
+text-decoration: none;
+font-weight: 500;
+transition: color 0.3s ease;
+}
+
+nav a:hover {
+color: var(--naranja-oscuro);
+}
+.info-contacto{
+    margin: 2rem;
+}
+.banner {
+    background: var(--cafe) url('cafe-banner.png') fixed ;
+
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 3rem;
+    padding-top: 4rem;
+    position: relative;
+}  
+
+.banner-content {
+max-width: 500px;
+}
+
+.banner-content h1 {
+font-size: 3rem;
+margin-bottom: 1rem;
+}
+
+.banner-content p {
+font-size: 1.2rem;
+margin-bottom: 2rem;
+}
+
+.banner-content .button {
+padding: 0.8rem 1.5rem;
+background-color: var(--naranja-oscuro);
+border: none;
+color: var(--blanco);
+font-size: 1rem;
+cursor: pointer;
+border-radius: 8px;
+transition: background 0.3s ease;
+text-decoration: none;
+display: inline-block;
+}
+
+.banner-content .button:hover {
+background-color: var(--naranja-hover);
+}
+
+section {
+padding: 5rem 2rem;
+max-width: 1200px;
+margin: auto;
+}
+
+.menu-grid{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+}
+
+.product {
+background-color: var(--gris-oscuro);
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 2px 8px var(--sombra);
+transition: transform 0.3s ease;
+}
+
+.product:hover, .galeria-grid img:hover {
+transform: scale(1.03);
+}
+
+.product img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+}
+
+.product h3, .product p, .product span {
+padding: 0.5rem 1rem;
+}
+
+.product button {
+margin: 0.5rem 1rem 1rem;
+padding: 0.5rem;
+width: calc(100% - 2rem);
+background-color: var(--naranja-oscuro);
+color: var(--blanco);
+border: none;
+border-radius: 6px;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+.product button:hover {
+background-color: var(--naranja-hover);
+}
+
+.galeria {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.galeria h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--blanco);
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Disposición en cuadrícula */
+    gap: 20px; /* Espaciado entre las imágenes */
+    padding: 20px;
+    justify-items: center;
+}
+
+.galeria-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.galeria-img:hover {
+    transform: scale(1.05); /* Efecto de ampliación en hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+h2{
+    text-align: center;
+}
+form {
+
+display: grid;
+gap: 1rem;
+max-width: 600px;
+margin: auto;
+}
+
+form input, form textarea {
+padding: 0.8rem;
+border: none;
+border-radius: 6px;
+background-color: var(--gris-suave);
+color: var(--gris-texto);
+}
+
+form button {
+padding: 0.8rem;
+background-color: var(--naranja-oscuro);
+border: none;
+color: var(--blanco);
+border-radius: 6px;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+form button:hover {
+background-color: var(--naranja-hover);
+}
+
+footer {
+background-color: var(--gris-footer);
+color: var(--gris-claro);
+text-align: center;
+padding: 2rem;
+margin-top: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+.banner-content h1 {
+    font-size: 2rem;
+}
+.banner-content p {
+    font-size: 1rem;
+}
+nav a {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+}
+}
+.galeria-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover; /* Para mantener el enfoque sin deformar */
+    border-radius: 8px; /* Opcional, para que se vean con esquinas redondeadas */
+    margin: 5px; /* Espaciado entre imágenes */
+}  
+.contacto {
+    padding: 60px 20px;
+    
+    color: var(--blanco);
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color:var(--blanco);
+}
+
+.info-contacto {
+    margin-bottom: 40px;
+}
+
+.info-contacto p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.info-contacto a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.info-contacto a:hover {
+    text-decoration: underline;
+}
+
+.mapa iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#form-contacto {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.btn-enviar {
+    padding: 12px 25px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #004d99;
+}
+
+@media (max-width: 768px) {
+    .contacto {
+        padding: 40px 20px;
+    }
+    .info-contacto p {
+        font-size: 1rem;
+    }
+}

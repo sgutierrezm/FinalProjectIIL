@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Café & Co.</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<!-- Encabezado -->
+<header class="header">
+    <div class="logo">
+    <img src="logo.webp" alt="Logo Café & Co." />
+    <span>Café & Co.</span>
+    </div>
+    <nav class="navbar" aria-label="Main Navigation">
+    <a href="#menu">Menú</a>
+    <a href="#reservaciones">Reservaciones</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+<main>
+    <!-- Banner Principal -->
+    <div class="banner" id="inicio">
+    <div class="banner-content">
+        <h1>Bienvenido a <br />Café & Co.</h1>
+        <p>
+        Disfruta de nuestros exquisitos cafés y pasteles artesanales en un
+        ambiente acogedor.
+        </p>
+        <a href="#menu" class="button">Ver Menú</a>
+    </div>
+    </div>
+
+    <!-- Menú de Productos -->
+    <section class="menu" id="menu">
+    <h2>Nuestro Menú</h2>
+    <div class="menu-grid">
+        <article class="product">
+        <img src="img/cafe-americano.jpg" alt="Café Americano" />
+        <h3>Café Americano</h3>
+        <p>Un café suave con un toque de caramelo</p>
+        <span>$3.50</span>
+        <button onclick="agregarAlCarrito('Café Americano')">
+            Añadir al carrito
+        </button>
+        </article>
+        <article class="product">
+        <img src="img/capuccino.jpg" alt="Capuccino" />
+        <h3>Capuccino</h3>
+        <p>Espuma cremosa y sabor intenso</p>
+        <span>$4.00</span>
+        <button onclick="agregarAlCarrito('Capuccino')">
+            Añadir al carrito
+        </button>
+        </article>
+        <article class="product">
+        <img src="img/latte.jpg" alt="Latte Vainilla" />
+        <h3>Latte Vainilla</h3>
+        <p>Delicioso con toque de vainilla</p>
+        <span>$4.20</span>
+        <button onclick="agregarAlCarrito('Latte Vainilla')">
+            Añadir al carrito
+        </button>
+        </article>
+        <article class="product">
+        <img src="img/tarta-choco.jpg" alt="Tarta de Chocolate" />
+        <h3>Tarta de Chocolate</h3>
+        <p>Chocolate puro, textura esponjosa</p>
+        <span>$3.80</span>
+        <button onclick="agregarAlCarrito('Tarta de Chocolate')">
+            Añadir al carrito
+        </button>
+        </article>
+        <article class="product">
+        <img src="img/cheesecake.jpg" alt="Cheesecake" />
+        <h3>Cheesecake</h3>
+        <p>Suave y con base crujiente</p>
+        <span>$4.00</span>
+        <button onclick="agregarAlCarrito('Cheesecake')">
+            Añadir al carrito
+        </button>
+        </article>
+        <article class="product">
+        <img src="img/croissant.jpg" alt="Croissant" />
+        <h3>Croissant</h3>
+        <p>Clásico, hojaldrado y fresco</p>
+        <span>$2.50</span>
+        <button onclick="agregarAlCarrito('Croissant')">
+            Añadir al carrito
+        </button>
+        </article>
+    </div>
+    </section>
+
+    <!-- Reservaciones -->
+    <section class="reservaciones" id="reservaciones">
+    <h2>Reservaciones</h2>
+    <form id="form-reservacion">
+        <label for="nombre-reserva">Nombre</label>
+        <input
+        type="text"
+        id="nombre-reserva"
+        placeholder="Nombre"
+        required
+        />
+        <label for="email-reserva">Correo electrónico</label>
+        <input
+        type="email"
+        id="email-reserva"
+        placeholder="Correo electrónico"
+        required
+        />
+        <label for="fecha-hora">Fecha y Hora</label>
+        <input type="datetime-local" id="fecha-hora" required />
+        <label for="personas">Número de personas</label>
+        <input
+        type="number"
+        id="personas"
+        placeholder="Número de personas"
+        required
+        />
+        <button type="submit">Reservar</button>
+    </form>
+    </section>
+
+    <!-- Galería -->
+    <section class="galeria" id="galeria">
+        <h2>Galería</h2>
+        <div class="galeria-grid">
+            <img src="img/galeria1.jpg" alt="Interior Café" class="galeria-img" />
+            <img src="img/galeria2.jpg" alt="Taza café" class="galeria-img" />
+            <img src="img/galeria3.jpg" alt="Postres" class="galeria-img" />
+            <img src="img/galeria4.jpg" alt="Vista local" class="galeria-img" />
+            <img src="img/galeria5.jpg" alt="Pasteles" class="galeria-img" />
+            <img src="img/galeria6.jpg" alt="Barista" class="galeria-img" />
+        </div>
+    </section>
+    
+    
+    
+
+
+    <!-- Contacto -->
+    <!-- Contacto -->
+<section class="contacto" id="contacto">
+    <h2>Contacto</h2>
+    <div class="info-contacto">
+        <p><strong>Dirección:</strong> Calle Ficticia 123, Ciudad Café</p>
+        <p><strong>Teléfono:</strong> +57 123 456 7890</p>
+        <p><strong>Email:</strong> 
+            <a href="mailto:contacto@cafeandco.com">contacto@cafeandco.com</a>
+        </p>
+        <div class="mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?... "
+                width="100%"
+                height="300"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                title="Ubicación en el mapa"
+            ></iframe>
+        </div>
+    </div>
+    <form id="form-contacto">
+        <div class="form-group">
+            <label for="nombre-contacto">Nombre</label>
+            <input
+                type="text"
+                id="nombre-contacto"
+                placeholder="Tu nombre"
+                required
+            />
+        </div>
+        <div class="form-group">
+            <label for="email-contacto">Correo electrónico</label>
+            <input
+                type="email"
+                id="email-contacto"
+                placeholder="Tu correo electrónico"
+                required
+            />
+        </div>
+        <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea
+                id="mensaje"
+                placeholder="Escribe tu mensaje"
+                required
+            ></textarea>
+        </div>
+        <button type="submit" class="btn-enviar">Enviar</button>
+    </form>
+</section>
+
+</main>
+<footer>
+    <p>&copy; 2025 Café & Co. Todos los derechos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
