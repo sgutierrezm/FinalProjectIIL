@@ -6,7 +6,7 @@ html, body {
 main{
     padding: 0%;
 }
-:root {
+:root{
 --cafe: #6f4e37;
 --negro: #1c1c1c;
 --blanco: #ffffff;
@@ -20,6 +20,21 @@ main{
 --negro-absoluto: #000;
 --sombra: rgba(0, 0, 0, 0.1);
 }
+:root.modo-claro{
+    --cafe: #d4a373;
+    --negro: #ffffff;
+    --blanco: #1c1c1c;
+    --naranja-oscuro: #e07a3f;
+    --naranja-hover: #ff914d;
+    --gris-suave: #fefefe;
+    --gris-texto: #333333;
+    --gris-oscuro: #e0e0e0;
+    --gris-footer: #ddd;
+    --gris-claro: #666;
+    --negro-absoluto: #f9f9f9;
+    --sombra: rgba(0, 0, 0, 0.05);
+}
+
 
 * {
 margin: 0;
@@ -76,7 +91,7 @@ color: var(--naranja-oscuro);
 }
 .banner {
     background: var(--cafe) url('cafe-banner.png') fixed ;
-
+    color: white;
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -100,8 +115,8 @@ font-size: 1.2rem;
 margin-bottom: 2rem;
 }
 
-.banner-content .button {
-padding: 0.8rem 1.5rem;
+.banner-content .button, .button-theme{
+padding: 0.5rem 1.2rem;
 background-color: var(--naranja-oscuro);
 border: none;
 color: var(--blanco);
@@ -113,7 +128,8 @@ text-decoration: none;
 display: inline-block;
 }
 
-.banner-content .button:hover {
+
+.banner-content .button:hover  {
 background-color: var(--naranja-hover);
 }
 
@@ -137,7 +153,7 @@ box-shadow: 0 2px 8px var(--sombra);
 transition: transform 0.3s ease;
 }
 
-.product:hover, .galeria-grid img:hover {
+.product:hover, img:hover {
 transform: scale(1.03);
 }
 
@@ -167,37 +183,9 @@ transition: background 0.3s ease;
 background-color: var(--naranja-hover);
 }
 
-.galeria {
-    text-align: center;
-    padding: 40px 0;
-}
 
-.galeria h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: var(--blanco);
-}
 
-.galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Disposición en cuadrícula */
-    gap: 20px; /* Espaciado entre las imágenes */
-    padding: 20px;
-    justify-items: center;
-}
 
-.galeria-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.galeria-img:hover {
-    transform: scale(1.05); /* Efecto de ampliación en hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
 h2{
     text-align: center;
 }
@@ -251,13 +239,7 @@ nav a {
     font-size: 0.9rem;
 }
 }
-.galeria-img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover; /* Para mantener el enfoque sin deformar */
-    border-radius: 8px; /* Opcional, para que se vean con esquinas redondeadas */
-    margin: 5px; /* Espaciado entre imágenes */
-}  
+
 .contacto {
     padding: 60px 20px;
     
@@ -350,5 +332,54 @@ nav a {
     }
     .info-contacto p {
         font-size: 1rem;
+    }
+}
+
+
+/* Carrusel */
+.galeria {
+    text-align: center;
+    padding: 40px 0;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.galeria h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--blanco);
+}
+
+
+.slide {
+    flex-shrink: 0;
+    width: 300px; /* Asegura que cada imagen tenga el mismo tamaño */
+    margin: 20px;
+    display: inline-block; /* Asegura que las imágenes se alineen horizontalmente */
+}
+
+.galeria-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: none;
+}
+
+/* Animación de desplazamiento */
+.carousel-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+    gap: 4px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
     }
 }

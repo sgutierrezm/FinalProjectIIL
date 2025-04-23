@@ -51,22 +51,26 @@ document.getElementById("form-contacto").addEventListener("submit", function (ev
     document.getElementById("form-contacto").reset();
 });
 
-// Modo oscuro
-let modoOscuro = false;
+// Modo claro
+let modoClaro = false;
+let btn=document.getElementById("modo-oscuro")
 document.getElementById("modo-oscuro").addEventListener("click", function () {
-    if (modoOscuro) {
-        document.body.classList.remove("modo-oscuro");
-        modoOscuro = false;
+    if (modoClaro) {
+        document.documentElement.classList.remove("modo-claro");
+        modoClaro = false;
     } else {
-        document.body.classList.add("modo-oscuro");
-        modoOscuro = true;
+        document.documentElement.classList.add("modo-claro");
+        modoClaro = true;
     }
+    
+    document.documentElement.classList.toggle("modo-claro");
+    btn.textContent = !modoClaro ? "Modo Oscuro" : "Modo Claro";
 });
+
+
 
 // Contador de visitas
 let contadorVisitas = localStorage.getItem("contadorVisitas") || 0;
 contadorVisitas++;
 localStorage.setItem("contadorVisitas", contadorVisitas);
 document.getElementById("contador-visitas").textContent = `Número de visitas: ${contadorVisitas}`;
-
-// Carrusel de imágenes en la página de inicio
